@@ -1,0 +1,584 @@
+{
+	"info": {
+		"_postman_id": "eb092f14-5638-40ef-adbc-613d1ddff76c",
+		"name": "校园社区",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24324308"
+	},
+	"item": [
+		{
+			"name": "用户模块",
+			"item": [
+				{
+					"name": "用户注册",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_name",
+									"value": "FanOne",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "FanOne666",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/v1/user/register",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "用户注册",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_name",
+											"value": "FanOne",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "FanOne666",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/v1/user/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 21 May 2023 11:00:45 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": \"操作成功\",\n    \"msg\": \"操作成功\",\n    \"error\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "用户登录",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_name",
+									"value": "FanOne",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "FanOne666",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/v1/user/login",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "用户登录",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_name",
+											"value": "FanOne",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "FanOne666",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/v1/user/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Jun 2022 11:34:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"user_name\": \"FanOne\",\n            \"create_at\": 1654255925\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJGYW5PbmUiLCJhdXRob3JpdHkiOjAsImV4cCI6MTY1NDM0MjQ1OSwiaXNzIjoidG8tZG8tbGlzdCJ9.LoN_NZu3p5y8XiOH9z5-Lf6GMLSazAX44j8SYut49vc\"\n    },\n    \"msg\": \"ok\",\n    \"error\": \"\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "帖子模块",
+			"item": [
+				{
+					"name": "创建帖子",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "和CSDSADS",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "当时的顺丰到付的",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/v1/post_create",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"post_create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取所有用户帖子",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "limit",
+									"value": "1",
+									"description": "页面数量",
+									"type": "text"
+								},
+								{
+									"key": "start",
+									"value": "1",
+									"description": "页码",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/v1/task_list",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"task_list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取帖子详情",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/v1/post_show?id=5",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"post_show"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更改帖子信息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "OHHHHH",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "更改一下",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/v1/task_update",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"task_update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "搜索用户的帖子",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "info",
+									"value": "更",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/v1/task_search",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"task_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除自己某条帖子",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}api/v1/task_delete?id=8",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"task_delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取某个用户所有帖子",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "评论模块",
+			"item": [
+				{
+					"name": "新增评论",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "删除评论",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/v1/comment_delete",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"comment_delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取帖子评论",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "私聊模块",
+			"item": [
+				{
+					"name": "发送消息",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "接收消息",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "测试连接",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}api/v1/ping",
+					"host": [
+						"{{url}}api"
+					],
+					"path": [
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "测试连接",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}api/v1/ping",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"v1",
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 03 Jun 2022 11:30:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "9"
+						}
+					],
+					"cookie": [],
+					"body": "\"success\""
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:4000/"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJkYW9xaXUiLCJhdXRob3JpdHkiOjAsImV4cCI6MTcwNzQwOTYxNSwiaXNzIjoidG8tZG8tbGlzdCJ9.YL8iow3pxnq671__JY707Qt2saICXcuzwdnfYJit_WE",
+			"type": "string"
+		}
+	]
+}
