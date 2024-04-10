@@ -102,8 +102,9 @@ func (s *PostSrv) ShowPost(ctx context.Context, req *types.ShowPostReq) (resp in
 		Title:   post.Title,
 		Content: post.Content,
 		Likes:   post.Likes,
-		Views:   post.Views,
+		Views:   int(post.View()),
 	}
+	post.AddView()
 	return ctl.RespSuccessWithData(respTask), nil
 
 }

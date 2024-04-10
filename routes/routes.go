@@ -30,7 +30,7 @@ func NewRouter() *gin.Engine {
 		authed.Use(middleware.JWT())
 		{
 			// 帖子操作
-			authed.POST("post_create", api.CreatePostHandler())   // 创建任务
+			authed.POST("post_create", api.CreatePostHandler())   // 创建帖子
 			authed.GET("post_all_list", api.ListAllPostHandler()) // 获取所有帖子列表
 			authed.GET("post_list", api.ListPostHandler())        //获取单个用户所有帖子
 			authed.GET("post_show", api.ShowPostHandler())        // 获取帖子详情
