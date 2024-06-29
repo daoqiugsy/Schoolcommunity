@@ -95,5 +95,4 @@ task/
 
 # 4.test git push dao qiu ee
 # 5
-# 4.test git push dao qiu ee 333
 读完了依赖
