@@ -94,4 +94,11 @@ task/
 
 
 # 4.test git push dao qiu ee
-# 5 What can i say
+# 5
+读完了依赖
+我很快就离开
+我只能
+永远读着对白
+我原来不了我
+我拉着弦
+what can i say
